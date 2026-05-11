@@ -6,7 +6,7 @@ export const allProducts = [
     specs: { Size: "230×110×75mm", Strength: "M7.5 – M10", Absorption: "< 12%", Finish: "Smooth" },
     gradient: "from-slate-700 to-slate-900",
     badge: "Best Seller",
-    image: "/images/pavers-herringbone-closeup.jpg",
+    image: "/images/suksh-bricks-branded.jpg",
   },
   {
     id: "pavers",
@@ -76,4 +76,9 @@ export const galleryImages = [
   { id: 9, title: "Grey Zigzag Pavers", category: "Products", image: "/images/zigzag-grey.jpg" },
   { id: 10, title: "Dark Zigzag Interlocking", category: "Production", image: "/images/zigzag-dark.jpg" },
   { id: 11, title: "Zigzag Pattern Road", category: "Projects", image: "/images/zigzag-pattern-road.jpg" },
+  { id: 12, title: "Brick Delivery — Crane Loading", category: "Production", image: "/images/brick-delivery-truck.jpg" },
+  { id: 13, title: "Brick Stacks — Yard Storage", category: "Production", image: "/images/brick-stacks-yard.jpg" },
+  { id: 14, title: "SUKSH Branded Bricks", category: "Production", image: "/images/suksh-bricks-branded.jpg" },
+  { id: 15, title: "Quality Check — Workers", category: "Production", image: "/images/suksh-bricks-workers.jpg" },
+  { id: 16, title: "Factory Interior", category: "Production", image: "/images/suksh-factory-interior.jpg" },
 ];

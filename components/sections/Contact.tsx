@@ -197,8 +197,8 @@ export default function Contact({ showHeader = true }: { showHeader?: boolean })
                     </div>
                     <div>
                       <div className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Email</div>
-                      <a href="mailto:info@sukshenterprise.com" className="font-semibold text-gray-800 hover:text-blue-700 transition-colors">
-                        info@sukshenterprise.com
+                      <a href="mailto:sukhsenterprise@gmail.com" className="font-semibold text-gray-800 hover:text-blue-700 transition-colors">
+                        sukhsenterprise@gmail.com
                       </a>
                     </div>
                   </li>

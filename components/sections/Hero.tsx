@@ -103,8 +103,8 @@ export default function Hero() {
                 { name: "Parking Tiles", image: "/images/parking-tiles-dark.jpg" },
                 { name: "Kerb Stones", image: "/images/paver-road.jpg" },
                 { name: "Zigzag Pavers", image: "/images/zigzag-pavers.jpg" },
-                { name: "Herringbone Pavers", image: "/images/pavers-herringbone.jpg" },
-                { name: "Solid Blocks", image: "/images/paver-project-driveway.jpg" },
+                { name: "Fly Ash Bricks", image: "/images/suksh-bricks-branded.jpg" },
+                { name: "Solid Blocks", image: "/images/suksh-factory-interior.jpg" },
               ].map((product) => (
                 <div key={product.name} className="rounded-xl overflow-hidden">
                   <div className="bg-slate-800 h-20 overflow-hidden">

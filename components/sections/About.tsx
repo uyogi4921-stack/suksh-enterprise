@@ -1,5 +1,6 @@
 "use client";
-import { Settings, Building2, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { Settings, Building2, ShieldCheck, Play, X, Truck, Factory, Award } from "lucide-react";
 import RevealOnScroll from "@/components/animations/RevealOnScroll";
 
 const pillars = [
@@ -29,7 +30,17 @@ const advantages = [
   { icon: "💰", title: "Cost Effective", desc: "Up to 30% cheaper than conventional bricks" },
 ];
 
+const factoryImages = [
+  { src: "/images/suksh-factory-interior.jpg", alt: "SUKSH Factory Interior — Manufacturing facility", label: "Factory Floor" },
+  { src: "/images/suksh-bricks-branded.jpg", alt: "SUKSH Branded Fly Ash Bricks", label: "Branded Bricks" },
+  { src: "/images/suksh-bricks-workers.jpg", alt: "Quality Check — Workers inspecting bricks", label: "Quality Check" },
+  { src: "/images/brick-stacks-yard.jpg", alt: "Brick storage yard with stacked pallets", label: "Storage Yard" },
+  { src: "/images/brick-delivery-truck.jpg", alt: "Brick delivery truck with crane loading", label: "Delivery Fleet" },
+];
+
 export default function About() {
+  const [videoOpen, setVideoOpen] = useState<string | null>(null);
+
   return (
     <>
       {/* About Us */}
@@ -43,15 +54,41 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <RevealOnScroll direction="left">
-              <div className="rounded-2xl overflow-hidden shadow-2xl relative">
-                <img
-                  src="/images/pavers-herringbone-closeup.jpg"
-                  alt="SUKSH Enterprise — Premium herringbone paver blocks"
-                  className="w-full h-80 object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1A365D]/90 to-transparent p-6">
-                  <p className="text-lg font-semibold text-white">Manufacturing Plant</p>
-                  <p className="text-sm text-blue-300">Ahmedabad, Gujarat</p>
+              <div className="space-y-4">
+                {/* Main factory image */}
+                <div className="rounded-2xl overflow-hidden shadow-2xl relative">
+                  <img
+                    src="/images/suksh-factory-interior.jpg"
+                    alt="SUKSH Enterprise — Manufacturing facility in Ahmedabad"
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1A365D]/90 to-transparent p-6">
+                    <p className="text-lg font-semibold text-white">Manufacturing Plant</p>
+                    <p className="text-sm text-blue-300">Ahmedabad, Gujarat</p>
+                  </div>
+                </div>
+                {/* Two smaller images below */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl overflow-hidden shadow-lg relative group">
+                    <img
+                      src="/images/suksh-bricks-branded.jpg"
+                      alt="SUKSH Branded Fly Ash Bricks"
+                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end">
+                      <span className="text-white text-xs font-semibold p-3 opacity-0 group-hover:opacity-100 transition-opacity">SUKSH Branded Bricks</span>
+                    </div>
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-lg relative group">
+                    <img
+                      src="/images/brick-delivery-truck.jpg"
+                      alt="Brick delivery truck with crane"
+                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-end">
+                      <span className="text-white text-xs font-semibold p-3 opacity-0 group-hover:opacity-100 transition-opacity">Delivery Fleet</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </RevealOnScroll>
@@ -66,7 +103,7 @@ export default function About() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 Our state-of-the-art facility in Ahmedabad produces over 50,000 units daily, serving builders, contractors, and government infrastructure projects across the region.
               </p>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-4 mb-8">
                 {[["500+", "Projects"], ["50K+", "Units/Day"], ["20+", "Years Exp."]].map(([val, label]) => (
                   <div key={label} className="bg-blue-50 rounded-xl p-4 text-center border border-blue-100">
                     <div className="text-2xl font-black text-[#1A365D]">{val}</div>
@@ -74,8 +111,107 @@ export default function About() {
                   </div>
                 ))}
               </div>
+
+              {/* Key highlights */}
+              <div className="space-y-3">
+                {[
+                  { icon: <Factory className="w-5 h-5 text-blue-600" />, text: "State-of-the-art automated manufacturing plant" },
+                  { icon: <Award className="w-5 h-5 text-blue-600" />, text: "ISO quality assured — every brick tested" },
+                  { icon: <Truck className="w-5 h-5 text-blue-600" />, text: "On-time delivery with dedicated logistics fleet" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3 bg-gray-50 rounded-lg px-4 py-3 border border-gray-100">
+                    {item.icon}
+                    <span className="text-sm text-gray-700 font-medium">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </RevealOnScroll>
           </div>
+
+          {/* Factory Photo Strip */}
+          <RevealOnScroll className="mb-20">
+            <h3 className="text-2xl font-bold text-[#1A365D] text-center mb-8">Our Manufacturing Facility</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {factoryImages.map((img) => (
+                <div key={img.label} className="rounded-xl overflow-hidden relative group cursor-pointer shadow-md">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                    <span className="text-white text-xs font-bold">{img.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
+
+          {/* Factory Video Section */}
+          <RevealOnScroll className="mb-20">
+            <h3 className="text-2xl font-bold text-[#1A365D] text-center mb-3">See Our Factory in Action</h3>
+            <p className="text-gray-500 text-center text-sm mb-8 max-w-lg mx-auto">
+              Watch how we manufacture premium fly ash bricks and paver blocks at our Ahmedabad facility.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {[
+                { src: "/videos/factory-tour-1.mp4", label: "Manufacturing Process", desc: "Automated brick pressing and production line" },
+                { src: "/videos/factory-tour-2.mp4", label: "Factory Tour", desc: "Complete walkthrough of our facility" },
+              ].map((video) => (
+                <div
+                  key={video.src}
+                  className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 cursor-pointer group"
+                  onClick={() => setVideoOpen(video.src)}
+                >
+                  <div className="relative h-56 bg-[#1A365D] flex items-center justify-center">
+                    <video
+                      src={video.src}
+                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+                      muted
+                      playsInline
+                      preload="metadata"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-blue-700 hover:bg-blue-600 rounded-full p-5 shadow-xl group-hover:scale-110 transition-transform">
+                        <Play className="w-8 h-8 text-white fill-white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-[#1A365D]">{video.label}</h4>
+                    <p className="text-gray-500 text-sm mt-1">{video.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
+
+          {/* Video Lightbox */}
+          {videoOpen && (
+            <div
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              onClick={() => setVideoOpen(null)}
+            >
+              <div
+                className="relative max-w-4xl w-full rounded-2xl overflow-hidden bg-black"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <video
+                  src={videoOpen}
+                  className="w-full max-h-[80vh]"
+                  controls
+                  autoPlay
+                  playsInline
+                />
+                <button
+                  onClick={() => setVideoOpen(null)}
+                  className="absolute top-4 right-4 bg-black/50 text-white rounded-full p-2 hover:bg-black/80 transition-colors z-10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Pillars */}
           <div className="grid md:grid-cols-3 gap-8">
