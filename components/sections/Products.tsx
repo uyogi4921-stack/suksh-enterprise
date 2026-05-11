@@ -24,14 +24,14 @@ export default function Products() {
                 whileHover={{ y: -8 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden group border border-gray-100 hover:border-blue-200 transition-all"
               >
-                <div className={`h-44 bg-gradient-to-br ${item.gradient} relative flex items-center justify-center`}>
-                  <div className="grid grid-cols-4 gap-1 p-4 opacity-40">
-                    {Array.from({ length: 16 }).map((_, i) => (
-                      <div key={i} className="w-8 h-5 bg-white/50 rounded-sm" />
-                    ))}
-                  </div>
+                <div className={`h-48 bg-gradient-to-br ${item.gradient} relative overflow-hidden`}>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                   {item.badge && (
-                    <span className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+                    <span className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
                       {item.badge}
                     </span>
                   )}

@@ -36,12 +36,12 @@ export default function ProductsPage() {
                 id={product.id}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col md:flex-row"
               >
-                <div className={`bg-gradient-to-br ${product.gradient} md:w-48 h-40 md:h-auto flex items-center justify-center shrink-0`}>
-                  <div className="grid grid-cols-3 gap-1 p-4 opacity-30">
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <div key={i} className="w-8 h-5 bg-white rounded-sm" />
-                    ))}
-                  </div>
+                <div className="md:w-56 h-44 md:h-auto shrink-0 overflow-hidden bg-gray-100">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6 flex-1">
                   <div className="flex items-center justify-between mb-2">

@@ -44,17 +44,14 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <RevealOnScroll direction="left">
               <div className="rounded-2xl overflow-hidden shadow-2xl relative">
-                <div className="bg-gradient-to-br from-[#1A365D] to-blue-900 h-80 flex items-center justify-center">
-                  <div className="grid grid-cols-5 gap-2 p-8 opacity-30">
-                    {Array.from({ length: 30 }).map((_, i) => (
-                      <div key={i} className="w-10 h-6 bg-white rounded-sm" />
-                    ))}
-                  </div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                    <div className="text-6xl font-black opacity-20">SE</div>
-                    <p className="text-lg font-semibold">Manufacturing Plant</p>
-                    <p className="text-sm text-blue-300">Ahmedabad, Gujarat</p>
-                  </div>
+                <img
+                  src="/images/suksh-bricks-top.jpg"
+                  alt="SUKSH Enterprise — Branded fly ash bricks in production"
+                  className="w-full h-80 object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1A365D]/90 to-transparent p-6">
+                  <p className="text-lg font-semibold text-white">Manufacturing Plant</p>
+                  <p className="text-sm text-blue-300">Ahmedabad, Gujarat</p>
                 </div>
               </div>
             </RevealOnScroll>

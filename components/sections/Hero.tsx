@@ -99,20 +99,16 @@ export default function Hero() {
             <p className="text-gray-400 text-xs mb-5">Premium product and blends solutions</p>
             <div className="grid grid-cols-3 gap-4">
               {[
-                { name: "Fly Ash Bricks", color: "from-slate-700 to-slate-800" },
-                { name: "Paver Blocks", color: "from-blue-800 to-blue-900" },
-                { name: "Parking Tiles", color: "from-gray-700 to-gray-800" },
-                { name: "Kerb Stones", color: "from-slate-600 to-slate-700" },
-                { name: "Hollow Blocks", color: "from-blue-700 to-blue-800" },
-                { name: "Solid Blocks", color: "from-gray-600 to-gray-700" },
+                { name: "Fly Ash Bricks", image: "/images/suksh-bricks-side.jpg" },
+                { name: "Paver Blocks", image: "/images/pavers-pattern.jpg" },
+                { name: "Parking Tiles", image: "/images/parking-tiles-dark.jpg" },
+                { name: "Kerb Stones", image: "/images/paver-road.jpg" },
+                { name: "Zigzag Pavers", image: "/images/zigzag-pavers.jpg" },
+                { name: "Solid Blocks", image: "/images/parking-tiles-grey.jpg" },
               ].map((product) => (
                 <div key={product.name} className="rounded-xl overflow-hidden">
-                  <div className={`bg-gradient-to-br ${product.color} h-20 flex items-center justify-center`}>
-                    <div className="grid grid-cols-3 gap-0.5 p-2 opacity-60">
-                      {Array.from({ length: 9 }).map((_, i) => (
-                        <div key={i} className="w-3 h-2 bg-white/30 rounded-sm" />
-                      ))}
-                    </div>
+                  <div className="bg-slate-800 h-20 overflow-hidden">
+                    <img src={product.image} alt={product.name} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" />
                   </div>
                   <div className="bg-white/5 border border-white/10 p-2">
                     <p className="text-white text-xs font-semibold leading-tight">{product.name}</p>

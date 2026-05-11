@@ -3,19 +3,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import RevealOnScroll from "@/components/animations/RevealOnScroll";
+import { galleryImages } from "@/lib/products-data";
 
-const galleryItems = [
-  { id: 1, title: "Fly Ash Brick Production", category: "Production", gradient: "from-slate-700 to-slate-900", size: "col-span-2 row-span-2" },
-  { id: 2, title: "Paver Block Laying", category: "Projects", gradient: "from-blue-700 to-blue-900" },
-  { id: 3, title: "Quality Testing Lab", category: "Quality", gradient: "from-gray-600 to-gray-800" },
-  { id: 4, title: "Manufacturing Plant", category: "Facility", gradient: "from-slate-600 to-slate-800" },
-  { id: 5, title: "Garden Pathway", category: "Projects", gradient: "from-green-700 to-green-900" },
-  { id: 6, title: "Driveway Pavers", category: "Projects", gradient: "from-amber-700 to-amber-900" },
-  { id: 7, title: "Kerb Stone Installation", category: "Projects", gradient: "from-indigo-700 to-indigo-900", size: "col-span-2" },
-  { id: 8, title: "Batch Mixing Plant", category: "Facility", gradient: "from-teal-700 to-teal-900" },
-];
+const galleryItems = galleryImages.map((img, i) => ({
+  ...img,
+  size: i === 0 ? "col-span-2 row-span-2" : i === 3 ? "col-span-2" : undefined,
+}));
 
-const categories = ["All", "Production", "Projects", "Quality", "Facility"];
+const categories = ["All", "Products", "Projects", "Production"];
 
 export default function GallerySection() {
   const [active, setActive] = useState("All");
@@ -49,7 +44,7 @@ export default function GallerySection() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <motion.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
           <AnimatePresence>
             {filtered.map((item) => (
               <motion.div
@@ -61,19 +56,15 @@ export default function GallerySection() {
                 className={`rounded-2xl overflow-hidden cursor-pointer group relative ${item.size ?? ""}`}
                 onClick={() => setLightbox(item)}
               >
-                <div className={`bg-gradient-to-br ${item.gradient} h-48 w-full relative`}>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                    <div className="grid grid-cols-5 gap-1 p-4">
-                      {Array.from({ length: 20 }).map((_, i) => (
-                        <div key={i} className="w-6 h-4 bg-white rounded-sm" />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-end p-4">
-                    <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all">
-                      <div className="text-blue-300 text-xs uppercase tracking-wider">{item.category}</div>
-                      <div className="text-white font-bold">{item.title}</div>
-                    </div>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-end p-4">
+                  <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all">
+                    <div className="text-blue-300 text-xs uppercase tracking-wider">{item.category}</div>
+                    <div className="text-white font-bold">{item.title}</div>
                   </div>
                 </div>
               </motion.div>
@@ -88,22 +79,24 @@ export default function GallerySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-6"
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6"
               onClick={() => setLightbox(null)}
             >
               <motion.div
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
-                className="relative max-w-2xl w-full rounded-2xl overflow-hidden"
+                className="relative max-w-3xl w-full rounded-2xl overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className={`bg-gradient-to-br ${lightbox.gradient} h-96 flex items-center justify-center`}>
-                  <div className="text-center text-white">
-                    <div className="text-6xl opacity-20 font-black">SE</div>
-                    <p className="font-bold text-xl mt-2">{lightbox.title}</p>
-                    <p className="text-blue-200 text-sm">{lightbox.category}</p>
-                  </div>
+                <img
+                  src={lightbox.image}
+                  alt={lightbox.title}
+                  className="w-full h-auto max-h-[80vh] object-contain bg-black"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <div className="text-blue-300 text-xs uppercase tracking-wider">{lightbox.category}</div>
+                  <div className="text-white font-bold text-lg">{lightbox.title}</div>
                 </div>
                 <button
                   onClick={() => setLightbox(null)}

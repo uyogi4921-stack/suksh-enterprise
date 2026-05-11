@@ -6,6 +6,7 @@ export const allProducts = [
     specs: { Size: "230×110×75mm", Strength: "M7.5 – M10", Absorption: "< 12%", Finish: "Smooth" },
     gradient: "from-slate-700 to-slate-900",
     badge: "Best Seller",
+    image: "/images/suksh-bricks-side.jpg",
   },
   {
     id: "pavers",
@@ -14,6 +15,7 @@ export const allProducts = [
     specs: { Size: "200×100×60mm", Strength: "M30 Grade", Pattern: "Interlocking", Finish: "Textured" },
     gradient: "from-blue-800 to-blue-950",
     badge: "Popular",
+    image: "/images/pavers-pattern.jpg",
   },
   {
     id: "tiles",
@@ -22,6 +24,7 @@ export const allProducts = [
     specs: { Size: "300×300mm", Strength: "M35 Grade", Absorption: "< 5%", Finish: "Anti-Skid" },
     gradient: "from-gray-700 to-gray-900",
     badge: undefined,
+    image: "/images/parking-tiles-dark.jpg",
   },
   {
     id: "kerb",
@@ -30,6 +33,7 @@ export const allProducts = [
     specs: { Size: "500×150×250mm", Strength: "M25 Grade", Type: "Road Grade", Finish: "Smooth" },
     gradient: "from-slate-600 to-slate-800",
     badge: undefined,
+    image: "/images/paver-road.jpg",
   },
   {
     id: "hollow",
@@ -38,6 +42,7 @@ export const allProducts = [
     specs: { Size: "400×200×200mm", Strength: "M5 Grade", Weight: "Lightweight", Finish: "Textured" },
     gradient: "from-blue-700 to-blue-900",
     badge: undefined,
+    image: "/images/parking-tiles-grey.jpg",
   },
   {
     id: "solid",
@@ -46,5 +51,26 @@ export const allProducts = [
     specs: { Size: "400×200×200mm", Strength: "M10 Grade", Type: "Load Bearing", Finish: "Smooth" },
     gradient: "from-gray-600 to-gray-800",
     badge: undefined,
+    image: "/images/suksh-bricks-top.jpg",
   },
+  {
+    id: "zigzag",
+    name: "Zigzag Pavers",
+    desc: "Interlocking zigzag design pavers available in grey and red. Perfect for walkways and garden paths.",
+    specs: { Size: "200×160×60mm", Strength: "M30 Grade", Pattern: "Zigzag", Finish: "Textured" },
+    gradient: "from-green-700 to-green-900",
+    badge: "New",
+    image: "/images/zigzag-pavers.jpg",
+  },
+];
+
+export const galleryImages = [
+  { id: 1, title: "Interlocking Paver Pattern", category: "Products", image: "/images/pavers-pattern.jpg" },
+  { id: 2, title: "Paver Block Road", category: "Projects", image: "/images/paver-road.jpg" },
+  { id: 3, title: "Herringbone Pavers", category: "Projects", image: "/images/pavers-herringbone.jpg" },
+  { id: 4, title: "SUKSH Branded Bricks", category: "Production", image: "/images/suksh-bricks-top.jpg" },
+  { id: 5, title: "SUKSH Bricks — Palletized", category: "Production", image: "/images/suksh-bricks-side.jpg" },
+  { id: 6, title: "Parking Tiles — Dark", category: "Products", image: "/images/parking-tiles-dark.jpg" },
+  { id: 7, title: "Parking Tiles — Grey", category: "Products", image: "/images/parking-tiles-grey.jpg" },
+  { id: 8, title: "Zigzag Interlocking Pavers", category: "Products", image: "/images/zigzag-pavers.jpg" },
 ];
