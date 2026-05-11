@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 bg-[#0f172a] overflow-hidden">
       {/* Texture overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[url('/images/concrete-texture.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 opacity-10 bg-[url('/images/pavers-herringbone-closeup.jpg')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#1A365D]/80 via-[#0f172a] to-[#0f172a]" />
 
       {/* Decorative circles */}
@@ -99,12 +99,12 @@ export default function Hero() {
             <p className="text-gray-400 text-xs mb-5">Premium product and blends solutions</p>
             <div className="grid grid-cols-3 gap-4">
               {[
-                { name: "Fly Ash Bricks", image: "/images/suksh-bricks-side.jpg" },
                 { name: "Paver Blocks", image: "/images/pavers-pattern.jpg" },
                 { name: "Parking Tiles", image: "/images/parking-tiles-dark.jpg" },
                 { name: "Kerb Stones", image: "/images/paver-road.jpg" },
                 { name: "Zigzag Pavers", image: "/images/zigzag-pavers.jpg" },
-                { name: "Solid Blocks", image: "/images/parking-tiles-grey.jpg" },
+                { name: "Herringbone Pavers", image: "/images/pavers-herringbone.jpg" },
+                { name: "Solid Blocks", image: "/images/paver-project-driveway.jpg" },
               ].map((product) => (
                 <div key={product.name} className="rounded-xl overflow-hidden">
                   <div className="bg-slate-800 h-20 overflow-hidden">

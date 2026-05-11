@@ -6,7 +6,7 @@ export const allProducts = [
     specs: { Size: "230×110×75mm", Strength: "M7.5 – M10", Absorption: "< 12%", Finish: "Smooth" },
     gradient: "from-slate-700 to-slate-900",
     badge: "Best Seller",
-    image: "/images/suksh-bricks-side.jpg",
+    image: "/images/pavers-herringbone-closeup.jpg",
   },
   {
     id: "pavers",
@@ -51,7 +51,7 @@ export const allProducts = [
     specs: { Size: "400×200×200mm", Strength: "M10 Grade", Type: "Load Bearing", Finish: "Smooth" },
     gradient: "from-gray-600 to-gray-800",
     badge: undefined,
-    image: "/images/suksh-bricks-top.jpg",
+    image: "/images/paver-project-driveway.jpg",
   },
   {
     id: "zigzag",
@@ -67,10 +67,13 @@ export const allProducts = [
 export const galleryImages = [
   { id: 1, title: "Interlocking Paver Pattern", category: "Products", image: "/images/pavers-pattern.jpg" },
   { id: 2, title: "Paver Block Road", category: "Projects", image: "/images/paver-road.jpg" },
-  { id: 3, title: "Herringbone Pavers", category: "Projects", image: "/images/pavers-herringbone.jpg" },
-  { id: 4, title: "SUKSH Branded Bricks", category: "Production", image: "/images/suksh-bricks-top.jpg" },
-  { id: 5, title: "SUKSH Bricks — Palletized", category: "Production", image: "/images/suksh-bricks-side.jpg" },
-  { id: 6, title: "Parking Tiles — Dark", category: "Products", image: "/images/parking-tiles-dark.jpg" },
-  { id: 7, title: "Parking Tiles — Grey", category: "Products", image: "/images/parking-tiles-grey.jpg" },
-  { id: 8, title: "Zigzag Interlocking Pavers", category: "Products", image: "/images/zigzag-pavers.jpg" },
+  { id: 3, title: "Herringbone Walkway", category: "Projects", image: "/images/pavers-herringbone.jpg" },
+  { id: 4, title: "Dark Textured Pavers", category: "Products", image: "/images/parking-tiles-dark.jpg" },
+  { id: 5, title: "Checkerboard Parking Tiles", category: "Products", image: "/images/parking-tiles-grey.jpg" },
+  { id: 6, title: "Zigzag Interlocking Pavers", category: "Products", image: "/images/zigzag-pavers.jpg" },
+  { id: 7, title: "Driveway Paver Project", category: "Projects", image: "/images/paver-project-driveway.jpg" },
+  { id: 8, title: "Herringbone Closeup", category: "Production", image: "/images/pavers-herringbone-closeup.jpg" },
+  { id: 9, title: "Grey Zigzag Pavers", category: "Products", image: "/images/zigzag-grey.jpg" },
+  { id: 10, title: "Dark Zigzag Interlocking", category: "Production", image: "/images/zigzag-dark.jpg" },
+  { id: 11, title: "Zigzag Pattern Road", category: "Projects", image: "/images/zigzag-pattern-road.jpg" },
 ];

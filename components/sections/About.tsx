@@ -45,8 +45,8 @@ export default function About() {
             <RevealOnScroll direction="left">
               <div className="rounded-2xl overflow-hidden shadow-2xl relative">
                 <img
-                  src="/images/suksh-bricks-top.jpg"
-                  alt="SUKSH Enterprise — Branded fly ash bricks in production"
+                  src="/images/pavers-herringbone-closeup.jpg"
+                  alt="SUKSH Enterprise — Premium herringbone paver blocks"
                   className="w-full h-80 object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1A365D]/90 to-transparent p-6">
